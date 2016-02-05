@@ -1,33 +1,39 @@
-<div layout="vertical" layout-fill>
+<div layout="vertical" layout-align="center" flex="100">
 
   <md-content>
     <header>
       <acme-navbar></acme-navbar>
     </header>
 
-    <section class="jumbotron">
+    <section class="md-display-2">
       <h1>Overload RestAngular URL Calls Demo</h1>
       <p>
         With ♥ thanks to the contributions of
         <acme-malarkey extra-values="['Angular', 'Gulp', 'Npm', 'Bower', 'Jasmine', 'Protractor']"></acme-malarkey>
       </p>
     </section>
-
-    <div class="techs" layout-align="center">
-      <md-card ng-repeat="demo in main.oracallDemos | orderBy:'rank'">
-        <md-card-content>
-          <h3 class="md-title">{{ demo.title }}</h3>
-          <p>{{ demo.description }}</p>
-          <p> To change : {{ demo.toChange }}</p>
-          <p> Default Url : {{ demo.urlDefault }}</p>
-          <p> Url to call : {{ demo.urlToChange }}</p>
-        </md-card-content>
-        <div class="md-action-buttons">
-          <md-button ng-href="{{ demo.urlDefault }}">Test default Url</md-button>
-          <md-button ng-href="{{ demo.urlToChange }}">Test new Url</md-button>
-          <md-button >ORACALL</md-button>
-        </div>
-      </md-card>
+    <div ng-repeat="demo in main.oracallDemos | orderBy:'rank'">
+      <br>
+      <br>
+        <md-toolbar>
+          <div class="md-toolbar-tools">
+              <span class="md-display-1">{{ demo.title }}</span>
+            <span flex></span>
+            <md-button class="md-primary md-hue-1" aria-label="Call Oracall">Call Oracall</md-button>
+          </div>
+        </md-toolbar>
+        <md-content class="md-whiteframe-9dp" layout-padding >
+          <div class="md-whiteframe-9dp" style="margin-left: 20px; margin-right: 20px">
+            <p style="margin-left: 20px"><span class="md-title">Description : </span>{{ demo.description }}</p>
+            <p style="margin-left: 20px"><span class="md-title"> To change : </span>{{ demo.toChange }}</p>
+            <p style="margin-left: 20px"><span class="md-title">Default Url : </span>{{ demo.urlDefault }}</p>
+            <p style="margin-left: 20px"><span class="md-title">Url to call : </span>{{ demo.urlToChange }}</p>
+          </div>
+          <br>
+          <div class="md-whiteframe-9dp" style="margin-left: 20px; margin-right: 20px">
+            <p style="margin-left: 20px"><span class="md-title">response : </span>{{ demo.data }}</p>
+          </div>
+        </md-content>
     </div>
   </md-content>
 

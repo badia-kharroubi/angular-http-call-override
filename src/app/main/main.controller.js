@@ -10,11 +10,9 @@
     var vm = this;
 
     vm.oracallDemos = [];
-
     activate();
 
     function activate() {
-
       getOracallDemos();
     }
 
