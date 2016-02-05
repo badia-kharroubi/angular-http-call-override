@@ -2,6 +2,6 @@
   'use strict';
 
   angular
-    .module('oracall', ['ngSanitize', 'ngMessages', 'restangular', 'ui.router', 'ngMaterial', 'toastr']);
+    .module('oracall', ['ngSanitize', 'ngMessages', 'restangular', 'ui.router', 'ngMaterial']);
 
 })();
