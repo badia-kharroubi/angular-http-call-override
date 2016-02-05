@@ -14,14 +14,18 @@
     </section>
 
     <div class="techs" layout-align="center">
-      <md-card ng-repeat="awesomeThing in main.awesomeThings | orderBy:'rank'">
+      <md-card ng-repeat="demo in main.oracallDemos | orderBy:'rank'">
         <md-card-content>
-          <img class="pull-right" ng-src="assets/images/{{ awesomeThing.logo }}" alt="{{ awesomeThing.title }}">
-          <h3 class="md-title">{{ awesomeThing.title }}</h3>
-          <p>{{ awesomeThing.description }}</p>
+          <h3 class="md-title">{{ demo.title }}</h3>
+          <p>{{ demo.description }}</p>
+          <p> To change : {{ demo.toChange }}</p>
+          <p> Default Url : {{ demo.urlDefault }}</p>
+          <p> Url to call : {{ demo.urlToChange }}</p>
         </md-card-content>
         <div class="md-action-buttons">
-          <md-button ng-href="{{ awesomeThing.url }}">Website</md-button>
+          <md-button ng-href="{{ demo.urlDefault }}">Test default Url</md-button>
+          <md-button ng-href="{{ demo.urlToChange }}">Test new Url</md-button>
+          <md-button >ORACALL</md-button>
         </div>
       </md-card>
     </div>

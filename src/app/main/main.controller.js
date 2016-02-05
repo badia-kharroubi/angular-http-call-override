@@ -6,30 +6,26 @@
     .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController(webDevTec, oracallDemo) {
+  function MainController(oracallDemos, $log) {
     var vm = this;
 
-    vm.awesomeThings = [];
+    vm.oracallDemos = [];
 
     activate();
 
     function activate() {
-      getWebDevTec();
+
+      getOracallDemos();
     }
 
-    function getOracallDemo() {
-      vm.awesomeThings = oracallDemo.getDemos();
-
-      angular.forEach(vm.awesomeThings, function (awesomeThing) {
-        awesomeThing.rank = Math.random();
-      });
+    function getOracallDemos() {
+      oracallDemos.getDemos()
+        .then(function (response) {
+          vm.oracallDemos = response.data.demos;
+        }, function (error) {
+          $log.error('Failed for getDemos.' + angular.toJson(error.data, true));
+        });
     }
-    function getWebDevTec() {
-      vm.awesomeThings = webDevTec.getTec();
 
-      angular.forEach(vm.awesomeThings, function (awesomeThing) {
-        awesomeThing.rank = Math.random();
-      });
-    }
   }
 })();
