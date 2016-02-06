@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('oracall')
+    .module('oracall.core.malarkey')
     .directive('acmeMalarkey', acmeMalarkey);
 
   /** @ngInject */
@@ -48,7 +48,7 @@
     }
 
     /** @ngInject */
-    function MalarkeyController($log, githubContributor) {
+    function MalarkeyController($log, githubContributorService) {
       var vm = this;
 
       vm.contributors = [];
@@ -62,14 +62,13 @@
       }
 
       function getContributors() {
-        return githubContributor.getContributors(10).then(function (data) {
+        return githubContributorService.getContributors(10).then(function (data) {
           vm.contributors = data;
 
           return vm.contributors;
         });
       }
     }
-
   }
 
 })();

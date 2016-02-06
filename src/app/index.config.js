@@ -6,11 +6,10 @@
     .config(config);
 
   /** @ngInject */
-  function config($logProvider, $mdThemingProvider) {
-      //$mdThemingProvider.theme('default').dark();
+  function config($logProvider) {
+    //$mdThemingProvider.theme('default').dark();
     // Enable log
     $logProvider.debugEnabled(true);
-
   }
 
 })();

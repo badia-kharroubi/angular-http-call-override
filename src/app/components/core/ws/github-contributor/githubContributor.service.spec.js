@@ -2,36 +2,36 @@
   'use strict';
 
   describe('service githubContributor', function () {
-    var githubContributor;
+    var githubContributorService;
     var $httpBackend;
     var $log;
 
-    beforeEach(module('oracall'));
-    beforeEach(inject(function (_githubContributor_, _$httpBackend_, _$log_) {
-      githubContributor = _githubContributor_;
+    beforeEach(module('oracall.core.ws.githubContributor'));
+    beforeEach(inject(function (_githubContributorService_, _$httpBackend_, _$log_) {
+      githubContributorService = _githubContributorService_;
       $httpBackend = _$httpBackend_;
       $log = _$log_;
     }));
 
     it('should be registered', function () {
-      expect(githubContributor).not.toEqual(null);
+      expect(githubContributorService).not.toEqual(null);
     });
 
     describe('apiHost variable', function () {
       it('should exist', function () {
-        expect(githubContributor.apiHost).not.toEqual(null);
+        expect(githubContributorService.apiHost).not.toEqual(null);
       });
     });
 
     describe('getContributors function', function () {
       it('should exist', function () {
-        expect(githubContributor.getContributors).not.toEqual(null);
+        expect(githubContributorService.getContributors).not.toEqual(null);
       });
 
       it('should return data', function () {
-        $httpBackend.when('GET', githubContributor.apiHost + '/contributors?per_page=1').respond(200, [{pprt: 'value'}]);
+        $httpBackend.when('GET', githubContributorService.apiHost + '/contributors?per_page=1').respond(200, [{pprt: 'value'}]);
         var data;
-        githubContributor.getContributors(1).then(function (fetchedData) {
+        githubContributorService.getContributors(1).then(function (fetchedData) {
           data = fetchedData;
         });
         $httpBackend.flush();
@@ -41,9 +41,9 @@
       });
 
       it('should define a limit per page as default value', function () {
-        $httpBackend.when('GET', githubContributor.apiHost + '/contributors?per_page=30').respond(200, new Array(30));
+        $httpBackend.when('GET', githubContributorService.apiHost + '/contributors?per_page=30').respond(200, new Array(30));
         var data;
-        githubContributor.getContributors().then(function (fetchedData) {
+        githubContributorService.getContributors().then(function (fetchedData) {
           data = fetchedData;
         });
         $httpBackend.flush();
@@ -52,11 +52,12 @@
       });
 
       it('should log a error', function () {
-        $httpBackend.when('GET', githubContributor.apiHost + '/contributors?per_page=1').respond(500);
-        githubContributor.getContributors(1);
+        $httpBackend.when('GET', githubContributorService.apiHost + '/contributors?per_page=1').respond(500);
+        githubContributorService.getContributors(1);
         $httpBackend.flush();
         expect($log.error.logs).toEqual(jasmine.stringMatching('XHR Failed for'));
       });
     });
   });
+
 })();

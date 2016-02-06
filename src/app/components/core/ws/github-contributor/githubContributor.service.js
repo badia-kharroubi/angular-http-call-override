@@ -2,11 +2,11 @@
   'use strict';
 
   angular
-    .module('oracall')
-    .factory('githubContributor', githubContributor);
+    .module('oracall.core.ws.githubContributor')
+    .factory('githubContributorService', githubContributorService);
 
   /** @ngInject */
-  function githubContributor($log, $http) {
+  function githubContributorService($log, $http) {
     var apiHost = 'https://api.github.com/repos/badia-kharroubi/oracall';
 
     var service = {
@@ -34,4 +34,5 @@
       }
     }
   }
+
 })();

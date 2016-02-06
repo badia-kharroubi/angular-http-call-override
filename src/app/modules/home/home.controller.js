@@ -2,28 +2,29 @@
   'use strict';
 
   angular
-    .module('oracall')
-    .controller('MainController', MainController);
+    .module('oracall.home')
+    .controller('HomeController', HomeController);
 
   /** @ngInject */
-  function MainController(oracallDemos, $log) {
+  function HomeController(homeDemosService, $log) {
     var vm = this;
 
-    vm.oracallDemos = [];
+    vm.demos = [];
     activate();
 
     function activate() {
-      getOracallDemos();
+      getDemos();
     }
 
-    function getOracallDemos() {
-      oracallDemos.getDemos()
+    function getDemos() {
+      homeDemosService.getDemos()
         .then(function (response) {
-          vm.oracallDemos = response.data.demos;
+          vm.demos = response.data.demos;
         }, function (error) {
           $log.error('Failed for getDemos.' + angular.toJson(error.data, true));
         });
     }
 
   }
+
 })();

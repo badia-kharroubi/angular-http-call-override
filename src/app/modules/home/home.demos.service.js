@@ -2,15 +2,15 @@
   'use strict';
 
   angular
-    .module('oracall')
-    .factory('oracallDemos', oracallDemos);
+    .module('oracall.home')
+    .factory('homeDemosService', homeDemosService);
 
   /** @ngInject */
-  function oracallDemos($q, $http, $log) {
+  function homeDemosService($q, $http, $log) {
     return {
       getDemos: function () {
         var deferred = $q.defer(),
-          httpPromise = $http.get('data/oracallDemos.json');
+          httpPromise = $http.get('modules/home/home.demos.json');
         httpPromise.then(function (response) {
           deferred.resolve(response);
         }, function (error) {
@@ -20,6 +20,5 @@
       }
     }
   }
-
 
 })();

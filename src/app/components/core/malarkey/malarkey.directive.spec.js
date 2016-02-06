@@ -12,11 +12,11 @@
     var vm;
     var el;
 
-    beforeEach(module('oracall'));
-    beforeEach(inject(function ($compile, $rootScope, githubContributor, $q, _$log_) {
+    beforeEach(module('oracall.core.malarkey'));
+    beforeEach(inject(function ($compile, $rootScope, githubContributorService, $q, _$log_) {
       $log = _$log_;
 
-      spyOn(githubContributor, 'getContributors').and.callFake(function () {
+      spyOn(githubContributorService, 'getContributors').and.callFake(function () {
         return $q.when([{}, {}, {}, {}, {}, {}]);
       });
 
@@ -42,4 +42,5 @@
       expect($log.info.logs).toEqual(jasmine.stringMatching('Activated Contributors View'));
     });
   });
+
 })();
