@@ -48,7 +48,7 @@
     }
 
     /** @ngInject */
-    function MalarkeyController($log, githubContributorService) {
+    function MalarkeyController($log, githubContributorDataService) {
       var vm = this;
 
       vm.contributors = [];
@@ -62,7 +62,7 @@
       }
 
       function getContributors() {
-        return githubContributorService.getContributors(10).then(function (data) {
+        return githubContributorDataService.getData(10).then(function (data) {
           vm.contributors = data;
 
           return vm.contributors;
