@@ -19,19 +19,21 @@
         <div class="md-toolbar-tools">
           <span class="md-display-1">{{ demo.title }}</span>
           <span flex></span>
-          <md-button class="md-primary md-hue-1" aria-label="Call Oracall">Call Oracall</md-button>
+          <md-button class="md-primary md-hue-1" aria-label="Call Oracall" ng-click="demo.responseFunction()">Call Oracall</md-button>
         </div>
       </md-toolbar>
       <md-content class="md-whiteframe-9dp" layout-padding>
         <div class="md-whiteframe-9dp" style="margin-left: 20px; margin-right: 20px">
-          <p style="margin-left: 20px"><span class="md-title">Description : </span>{{ demo.description }}</p>
-          <p style="margin-left: 20px"><span class="md-title"> To change : </span>{{ demo.toChange }}</p>
-          <p style="margin-left: 20px"><span class="md-title">Default Url : </span>{{ demo.urlDefault }}</p>
-          <p style="margin-left: 20px"><span class="md-title">Url to call : </span>{{ demo.urlToChange }}</p>
+          <p ng-style="{'margin-left':'20px'}"><span class="md-title">Description : </span>{{ demo.description }}</p>
+          <p ng-style="{'margin-left':'20px'}"><span class="md-title"> To change : </span>{{ demo.toChange }}</p>
+          <p ng-style="{'margin-left':'20px'}"><span class="md-title">Default Url : </span>{{ demo.urlDefault }}</p>
+          <p ng-style="{'margin-left':'20px'}"><span class="md-title">Url to call : </span>{{ demo.urlToChange }}</p>
         </div>
         <br>
         <div class="md-whiteframe-9dp" style="margin-left: 20px; margin-right: 20px">
-          <p style="margin-left: 20px"><span class="md-title">response : </span>{{ demo.data }}</p>
+          <p ng-style="{'margin-left':'20px'}"><span class="md-title">response : </span><br>
+            <json-formatter open="3" json='demo.response'></json-formatter>
+          </p>
         </div>
       </md-content>
     </div>

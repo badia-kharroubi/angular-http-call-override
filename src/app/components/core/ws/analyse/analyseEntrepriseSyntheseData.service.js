@@ -22,7 +22,10 @@
         .catch(getDataFailed);
 
       function getDataComplete(response) {
-        return response.data;
+        var toReturn = {};
+        toReturn.techdata = response.techdata;
+        toReturn.data = response.data;
+        return toReturn;
       }
 
       function getDataFailed(error) {

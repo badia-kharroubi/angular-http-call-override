@@ -2,6 +2,6 @@
   'use strict';
 
   angular
-    .module('oracall.home', ['jsonFormatter']);
+    .module('oracall.core.ws.gerico', []);
 
 })();
