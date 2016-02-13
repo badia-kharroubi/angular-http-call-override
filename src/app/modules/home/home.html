@@ -12,14 +12,14 @@
         <acme-malarkey extra-values="['Angular', 'Gulp', 'Npm', 'Bower', 'Jasmine', 'Protractor']"></acme-malarkey>
       </p>
     </section>
-    <div ng-repeat="demo in home.demos | orderBy:'rank'">
+    <div ng-repeat="demo in home.viewdata.demos | orderBy:'rank'">
       <br>
       <br>
       <md-toolbar>
         <div class="md-toolbar-tools">
           <span class="md-display-1">{{ demo.title }}</span>
           <span flex></span>
-          <md-button class="md-primary md-hue-1" aria-label="Call Oracall" ng-click="demo.responseFunction()">Call Oracall</md-button>
+          <md-button class="md-primary md-hue-1" aria-label="Call Rest" ng-click="home.tech.fns.getHttpCalls($index, demo.dataType)">Call Oracall</md-button>
         </div>
       </md-toolbar>
       <md-content class="md-whiteframe-9dp" layout-padding>

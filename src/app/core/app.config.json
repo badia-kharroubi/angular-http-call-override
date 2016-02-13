@@ -1,0 +1,15 @@
+{
+  "general": {
+    "defaultHost": "http://toto.fr"
+  },
+  "logger": {
+    "prefixPattern": "fiburo [%3$s] - %2$s - %1$s => ",
+    "datetimePattern": "YYYY-MM-DDTHH:mm:ssZ",
+    "logLevels": {
+      "app.httpcalls": "TRACE",
+      "app.home": "TRACE",
+      "app": "TRACE",
+      "*": "ERROR"
+    }
+  }
+}
