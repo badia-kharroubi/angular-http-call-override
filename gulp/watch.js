@@ -9,12 +9,25 @@ var browserSync = require('browser-sync');
 function isOnlyChange(event) {
   return event.type === 'changed';
 }
+
 gulp.task('copy-json', function() {
   gulp.src(path.join(conf.paths.src, '/app/**/*.json'))
     .pipe(gulp.dest(path.join(conf.paths.tmp, '/serve')));
 });
 
-gulp.task('watch', ['inject', 'copy-json'], function () {
+gulp.task('copy-conf', function() {
+  gulp.src(path.join(conf.paths.src, '/index.config.js'))
+    .pipe(gulp.dest(path.join(conf.paths.tmp, '/serve')));
+
+});
+
+gulp.task('watch', ['inject', 'copy-json', 'copy-conf'], function () {
+
+  gulp.watch(path.join(conf.paths.src, '/index.config.js'), function (event) {
+    if (isOnlyChange(event)) {
+      gulp.start('config-reload');
+    }
+  });
 
   gulp.watch([path.join(conf.paths.src, '/*.html'), 'bower.json'], ['inject-reload']);
 
@@ -33,6 +46,7 @@ gulp.task('watch', ['inject', 'copy-json'], function () {
       gulp.start('inject-reload');
     }
   });
+
 
   gulp.watch(path.join(conf.paths.src, '/app/**/*.html'), function (event) {
     browserSync.reload(event.path);

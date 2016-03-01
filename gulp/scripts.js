@@ -13,6 +13,11 @@ gulp.task('scripts-reload', function () {
   return buildScripts()
     .pipe(browserSync.stream());
 });
+gulp.task('config-reload', function () {
+  return gulp.src(path.join(conf.paths.src, '/index.config.js'))
+    .pipe(gulp.dest(path.join(conf.paths.tmp, '/serve')))
+    .pipe(browserSync.stream());
+});
 
 gulp.task('scripts', function () {
   return buildScripts();
