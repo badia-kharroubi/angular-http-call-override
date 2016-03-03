@@ -2,14 +2,14 @@
   'use strict';
 
   angular
-    .module('httpcalls.github')
+    .module('app.httpcalls.github')
     .factory('githubContributorDataService', githubContributorDataService);
 
   /** @ngInject */
-  function githubContributorDataService($http, apiHostGithub, $log) {
-    var logger = $log.getInstance('httpcalls.github');
+  function githubContributorDataService($http, $log, APP_CONFIG) {
+    var logger = $log.getInstance('app.httpcalls.github');
 
-    var apiHost = apiHostGithub;
+    var apiHost = APP_CONFIG.httpcalls.githubApiBase;
 
     var dataService = {
       apiHost: apiHost,
@@ -32,7 +32,7 @@
       }
 
       function getDataFailed(error) {
-        logger.error("XHR Failed : %j", error.data);
+        logger.error("XHR Failed for githubContributorDataService : %j", error.data);
       }
     }
   }

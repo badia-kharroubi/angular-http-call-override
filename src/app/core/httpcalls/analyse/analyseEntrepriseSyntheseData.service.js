@@ -2,12 +2,14 @@
   'use strict';
 
   angular
-    .module('httpcalls.analyse')
+    .module('app.httpcalls.analyse')
     .factory('analyseEntrepriseSyntheseDataService', analyseEntrepriseSyntheseDataService);
 
   /** @ngInject */
-  function analyseEntrepriseSyntheseDataService(analyseRestangularService, apiHostAnalyse, $log) {
-    var apiHost = apiHostAnalyse;
+  function analyseEntrepriseSyntheseDataService(analyseRestangularService, $log, APP_CONFIG) {
+    var logger = $log.getInstance('app.httpcalls.analyse');
+
+    var apiHost = APP_CONFIG.httpcalls.analyseApiBase;
 
     var dataService = {
       apiHost: apiHost,
@@ -23,13 +25,15 @@
 
       function getDataComplete(response) {
         var toReturn = {};
-        toReturn.techdata = response.techdata;
-        toReturn.data = response.data;
+        toReturn.techdata = response.data.techdata;
+        toReturn.data = response.data.data;
+        toReturn.responseTech = response.responseTech
+
         return toReturn;
       }
 
       function getDataFailed(error) {
-        $log.error('XHR Failed for analyseEntrepriseSyntheseDataService.' + angular.toJson(error.data, true));
+        logger.error("XHR Failed for analyseEntrepriseSyntheseDataService : %j", error.data);
       }
     }
   }

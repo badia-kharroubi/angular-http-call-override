@@ -2,6 +2,10 @@
   'use strict';
 
   angular
-    .module('httpcalls', ['httpcalls.github', 'httpcalls.analyse', 'httpcalls.gerico']);
+    .module('app.httpcalls', [
+      'app.httpcalls.github',
+      'app.httpcalls.analyse',
+      'app.httpcalls.gerico'
+    ]);
 
 })();

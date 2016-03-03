@@ -1,15 +1,16 @@
 (function (angular) {
-    'use strict';
+  'use strict';
 
-    angular
-        .module('httpcalls.gerico')
-        .factory('gericoRestangularService', gericoRestangularService);
+  angular
+    .module('app.httpcalls.gerico')
+    .factory('gericoRestangularService', gericoRestangularService);
 
-    /** @ngInject */
-    function gericoRestangularService(Restangular, apiHostGerico) {
-        return Restangular.withConfig(function (RestangularConfigurer) {
-            RestangularConfigurer.setBaseUrl(apiHostGerico);
-        });
-    }
+  /** @ngInject */
+  function gericoRestangularService(Restangular, $log, APP_CONFIG) {
+    return Restangular.withConfig(function (RestangularConfigurer) {
+      RestangularConfigurer.setBaseUrl(APP_CONFIG.httpcalls.gericoApiBase);
+      RestangularConfigurer.setFullResponse(true);
+    });
+  }
 
 })(angular);

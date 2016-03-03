@@ -2,12 +2,14 @@
   'use strict';
 
   angular
-    .module('httpcalls.gerico')
+    .module('app.httpcalls.gerico')
     .factory('gericoEntrepriseEntiteJuridiqueContactsDataService', gericoEntrepriseEntiteJuridiqueContactsDataService);
 
   /** @ngInject */
-  function gericoEntrepriseEntiteJuridiqueContactsDataService(gericoRestangularService, apiHostGerico, $log) {
-    var apiHost = apiHostGerico;
+  function gericoEntrepriseEntiteJuridiqueContactsDataService(gericoRestangularService, $log, APP_CONFIG) {
+    var logger = $log.getInstance('app.httpcalls.gerico');
+
+    var apiHost = APP_CONFIG.httpcalls.gericoApiBase;
 
     var dataService = {
       apiHost: apiHost,
@@ -24,14 +26,15 @@
 
       function getDataComplete(response) {
         var toReturn = {};
-        toReturn.techdata = response.techdata;
-        toReturn.data = response.data;
+        toReturn.techdata = response.data.techdata;
+        toReturn.data = response.data.data;
+        toReturn.responseTech = response.responseTech
+
         return toReturn;
       }
 
       function getDataFailed(error) {
-        $log.error('XHR Failed for gericoEntrepriseEntiteJuridiqueContactsDataService.' +
-          angular.toJson(error.data, true));
+        logger.error("XHR Failed for gericoEntrepriseEntiteJuridiqueContactsDataService : %j", error.data);
       }
     }
   }

@@ -2,15 +2,16 @@
   'use strict';
 
   angular
-    .module('httpcalls.analyse')
+    .module('app.httpcalls.analyse')
     .factory('analyseEntrepriseEntiteJuridiqueCotationSimplifieeDataService',
       analyseEntrepriseEntiteJuridiqueCotationSimplifieeDataService);
 
   /** @ngInject */
   function analyseEntrepriseEntiteJuridiqueCotationSimplifieeDataService(analyseRestangularService,
-                                                                         apiHostAnalyse, $log) {
-    var logger = $log.getInstance('httpcalls-analyse');
-    var apiHost = apiHostAnalyse;
+                                                                         $log, APP_CONFIG) {
+    var logger = $log.getInstance('app.httpcalls.analyse');
+
+    var apiHost = APP_CONFIG.httpcalls.analyseApiBase;
 
     var dataService = {
       apiHost: apiHost,
@@ -27,8 +28,10 @@
 
       function getDataComplete(response) {
         var toReturn = {};
-        toReturn.techdata = response.techdata;
-        toReturn.data = response.data;
+        toReturn.techdata = response.data.techdata;
+        toReturn.data = response.data.data;
+        toReturn.responseTech = response.responseTech
+
         return toReturn;
       }
 

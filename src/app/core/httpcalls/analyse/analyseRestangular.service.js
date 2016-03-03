@@ -1,15 +1,16 @@
 (function (angular) {
-    'use strict';
+  'use strict';
 
-    angular
-        .module('httpcalls.analyse')
-        .factory('analyseRestangularService', analyseRestangularService);
+  angular
+    .module('app.httpcalls.analyse')
+    .factory('analyseRestangularService', analyseRestangularService);
 
-    /** @ngInject */
-    function analyseRestangularService(Restangular, apiHostAnalyse) {
-        return Restangular.withConfig(function (RestangularConfigurer) {
-            RestangularConfigurer.setBaseUrl(apiHostAnalyse);
-        });
-    }
+  /** @ngInject */
+  function analyseRestangularService(Restangular, APP_CONFIG) {
+    return Restangular.withConfig(function (RestangularConfigurer) {
+      RestangularConfigurer.setBaseUrl(APP_CONFIG.httpcalls.analyseApiBase);
+      RestangularConfigurer.setFullResponse(true);
+    });
+  }
 
 })(angular);

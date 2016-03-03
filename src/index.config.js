@@ -14,6 +14,10 @@
       }
     },
     "httpcalls": {
+      "githubApiBase": "https://api.github.com",
+      "gericoApiBase": "http://localhost:18080/gerico/api/v1",
+      "analyseApiBase": "http://localhost:18080/analyse/api/v1",
+      "timestampMarker": true,
       "override": true,
       "httpGet": {
         "override": true,
@@ -24,7 +28,7 @@
             "queryParams": false,
             "pathParams": true,
             "origin": {
-              "host": "http://oracall-apimocker-badia-kharroubi.c9users.io:8081",
+              "host": "http://localhost:18080",
               "api": "/gerico/api/v1/entreprise/entites-juridiques/{idej}/contacts",
               "regex": "^(http:\\/\\/|https:\\/\\/)([a-zA-Z0-9.\\-_:])+(\\/){1}(gerico\\/api\\/v1\\/entreprise\\/entites-juridiques\\/){1}([A-Za-z0-9])+((\\/contacts)$){1}",
               "pathParams": [
@@ -36,7 +40,7 @@
               ]
             },
             "target": {
-              "host": "http://oracall-apimocker-badia-kharroubi.c9users.io:8082",
+              "host": "http://localhost:28080",
               "api": "/ficonef/api/v1/entreprise/entites-juridiques/{idej}/contacts",
               "pathParams": [
                 {
@@ -54,7 +58,7 @@
             "pathParams": true,
             "queryParams": false,
             "origin": {
-              "host": "http://oracall-apimocker-badia-kharroubi.c9users.io:8081",
+              "host": "http://localhost:18080",
               "api": "/gerico/api/v1/entreprise/entites-juridiques/{idej}/contacts/{idcontact}",
               "regex": "^(http:\\/\\/|https:\\/\\/)([A-Za-z0-9.\\-_:])+(\\/){1}(gerico\\/api\\/v1\\/entreprise\\/entites-juridiques\\/){1}([A-Za-z0-9])+(\\/contacts\\/){1}(([A-Za-z0-9])+)$",
               "pathParams": [
@@ -71,7 +75,7 @@
               ]
             },
             "target": {
-              "host": "http://oracall-apimocker-badia-kharroubi.c9users.io:8082",
+              "host": "http://localhost:28080",
               "api": "/ficonef/api/v1/entreprise/entites-juridiques/{idej}/contacts/{idcontact}",
               "pathParams": [
                 {
@@ -95,7 +99,7 @@
             "pathParams": true,
             "queryParams": false,
             "origin": {
-              "host": "http://oracall-apimocker-badia-kharroubi.c9users.io:8081",
+              "host": "http://localhost:18080",
               "api": "/gerico/api/v1/entreprise/entites-juridiques/{idej}/cotation-simplifiee",
               "regex": "^(http:\\/\\/|https:\\/\\/)([A-Za-z0-9.\\-_:])+(\\/){1}(gerico\\/api\\/v1\\/entreprise\\/entites-juridiques\\/){1}([A-Za-z0-9])+((\\/cotation-simplifiee)$){1}",
               "pathParams": [
@@ -107,7 +111,7 @@
               ]
             },
             "target": {
-              "host": "http://oracall-apimocker-badia-kharroubi.c9users.io:8082",
+              "host": "http://localhost:28080",
               "api": "/ficonef/api/v1/entreprise/entites-juridiques/{idej}/cotation-simplifiee",
               "pathParams": [
                 {
@@ -125,12 +129,12 @@
             "pathParams": false,
             "queryParams": false,
             "origin": {
-              "host": "http://oracall-apimocker-badia-kharroubi.c9users.io:8081",
+              "host": "http://localhost:18080",
               "api": "/analyse/api/v1/entreprise/synthese",
               "regex": "^(http:\\/\\/|https:\\/\\/)([A-Za-z0-9.\\-_:])+(\\/){1}(gerico\\/api\\/v1\\/entreprise\\/entites-juridiques\\/){1}([A-Za-z0-9])+((\\/cotation-simplifiee)$){1}"
             },
             "target": {
-              "host": "http://oracall-apimocker-badia-kharroubi.c9users.io:8082",
+              "host": "http://localhost:28080",
               "api": "/ficonef-ws-common/api/v1/commons/entreprise/synthese"
             }
           },
@@ -140,7 +144,7 @@
             "queryParams": true,
             "pathParams": true,
             "origin": {
-              "host": "http://oracall-apimocker-badia-kharroubi.c9users.io:8081",
+              "host": "http://localhost:18080",
               "api": "/gerico/api/v1/entreprise/entites-juridiques/{idej}/contacts?param1=param1value",
               "regex": "^(http:\\/\\/|https:\\/\\/)([A-Za-z0-9.\\-_:])+(\\/){1}(gerico\\/api\\/v1\\/entreprise\\/entites-juridiques\\/){1}([A-Za-z0-9])+((\\/contacts\\?)){1}(([a-zA-Z0-9.\\-_:=&])+$){1}",
               "pathParams": [
@@ -152,7 +156,7 @@
               ]
             },
             "target": {
-              "host": "http://oracall-apimocker-badia-kharroubi.c9users.io:8082",
+              "host": "http://localhost:28080",
               "api": "/ficonef/api/v1/entreprise/entites-juridiques/{idej}/contacts?param1=param1value",
               "pathParams": [
                 {

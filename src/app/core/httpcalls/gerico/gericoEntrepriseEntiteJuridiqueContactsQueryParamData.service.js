@@ -2,14 +2,16 @@
   'use strict';
 
   angular
-    .module('httpcalls.gerico')
+    .module('app.httpcalls.gerico')
     .factory('gericoEntrepriseEntiteJuridiqueContactsQueryParamDataService',
       gericoEntrepriseEntiteJuridiqueContactsQueryParamDataService);
 
   /** @ngInject */
   function gericoEntrepriseEntiteJuridiqueContactsQueryParamDataService(gericoRestangularService,
-                                                                        apiHostGerico, $log) {
-    var apiHost = apiHostGerico;
+                                                                        $log, APP_CONFIG) {
+    var logger = $log.getInstance('app.httpcalls.gerico');
+
+    var apiHost = APP_CONFIG.httpcalls.gericoApiBase;
 
     var dataService = {
       apiHost: apiHost,
@@ -26,14 +28,15 @@
 
       function getDataComplete(response) {
         var toReturn = {};
-        toReturn.techdata = response.techdata;
-        toReturn.data = response.data;
+        toReturn.techdata = response.data.techdata;
+        toReturn.data = response.data.data;
+        toReturn.responseTech = response.responseTech
+
         return toReturn;
       }
 
       function getDataFailed(error) {
-        $log.error('XHR Failed for gericoEntrepriseEntiteJuridiqueContactsQueryParamDataService.' +
-          angular.toJson(error.data, true));
+        logger.error("XHR Failed for gericoEntrepriseEntiteJuridiqueContactsQueryParamDataService : %j", error.data);
       }
     }
   }

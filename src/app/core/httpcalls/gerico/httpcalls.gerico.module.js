@@ -2,6 +2,6 @@
   'use strict';
 
   angular
-    .module('httpcalls.gerico', []);
+    .module('app.httpcalls.gerico', []);
 
 })();

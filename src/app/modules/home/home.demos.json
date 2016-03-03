@@ -5,48 +5,48 @@
       "title": "Use case 1",
       "description": "Change host and application with one PathParam.",
       "toChange": "true",
-      "urlDefault": "http://oracall-apimocker-badia-kharroubi.c9users.io:8081/gerico/api/v1/entreprise/entites-juridiques/E0102030405060708/contacts",
-      "urlToChange": "http://oracall-apimocker-badia-kharroubi.c9users.io:8082/ficonef/api/v1/entreprise/entites-juridiques/E0102030405060708/contacts"
+      "urlDefault": "http://localhost:18080/gerico/api/v1/entreprise/entites-juridiques/E0102030405060708/contacts",
+      "urlToChange": "http://localhost:28080/ficonef/api/v1/entreprise/entites-juridiques/E0102030405060708/contacts"
     },
     {
       "rank": 2,
       "title": "Use case 2",
       "description": "Change host and application with multi PathParam.",
       "toChange": "true",
-      "urlDefault": "http://oracall-apimocker-badia-kharroubi.c9users.io:8081/gerico/api/v1/entreprise/entites-juridiques/E0102030405060708/contacts/23",
-      "urlToChange": "http://oracall-apimocker-badia-kharroubi.c9users.io:8082/ficonef/api/v1/entreprise/entites-juridiques/E0102030405060708/contacts/23"
+      "urlDefault": "http://localhost:18080/gerico/api/v1/entreprise/entites-juridiques/E0102030405060708/contacts/23",
+      "urlToChange": "http://localhost:28080/ficonef/api/v1/entreprise/entites-juridiques/E0102030405060708/contacts/23"
     },
     {
       "rank": 3,
       "title": "Use case 3",
       "description": "Change host, application, version and endpoint with one PathParam.",
       "toChange": "true",
-      "urlDefault": "http://oracall-apimocker-badia-kharroubi.c9users.io:8081/analyse/api/v1/entreprise/entites-juridiques/E0102030405060708/cotation-simplifiee",
-      "urlToChange": "http://oracall-apimocker-badia-kharroubi.c9users.io:8082/ficonef-ws-common/api/v2/common/entreprise/entites-juridiques/E0102030405060708/cotation-simplifiee"
+      "urlDefault": "http://localhost:18080/analyse/api/v1/entreprise/entites-juridiques/E0102030405060708/cotation-simplifiee",
+      "urlToChange": "http://localhost:28080/ficonef-ws-common/api/v2/common/entreprise/entites-juridiques/E0102030405060708/cotation-simplifiee"
     },
     {
       "rank": 4,
       "title": "Use case 4",
       "description": "Change host, application, version and endpoint with no PathParam.",
       "toChange": "true",
-      "urlDefault": "http://oracall-apimocker-badia-kharroubi.c9users.io:8081/analyse/api/v1/entreprise/synthese",
-      "urlToChange": "http://oracall-apimocker-badia-kharroubi.c9users.io:8082/ficonef-ws-common/api/v1/common/entreprise/synthese"
+      "urlDefault": "http://localhost:18080/analyse/api/v1/entreprise/synthese",
+      "urlToChange": "http://localhost:28080/ficonef-ws-common/api/v1/common/entreprise/synthese"
     },
     {
       "rank": 5,
       "title": "Use case 5",
       "description": "Change host and application with PathParam and QueryParam.",
       "toChange": "true",
-      "urlDefault": "http://oracall-apimocker-badia-kharroubi.c9users.io:8081/gerico/api/v1/entreprise/entites-juridiques/E0102030405060708/contacts?param1=param1value",
-      "urlToChange": "http://oracall-apimocker-badia-kharroubi.c9users.io:8082/ficonef/api/v1/entreprise/entites-juridiques/E0102030405060708/contacts?param1=param1value"
+      "urlDefault": "http://localhost:18080/gerico/api/v1/entreprise/entites-juridiques/E0102030405060708/contacts?param1=param1value",
+      "urlToChange": "http://localhost:28080/ficonef/api/v1/entreprise/entites-juridiques/E0102030405060708/contacts?param1=param1value"
     },
     {
       "rank": 6,
       "title": "Use case 6",
       "description": "No Change to do, url similar than use case 4",
       "toChange": "false",
-      "urlDefault": "http://oracall-apimocker-badia-kharroubi.c9users.io:8081/analyse/api/v1/entreprise/personnes-physiques/E0102030405060708/cotation-simplifiee",
-      "urlToChange": "http://oracall-apimocker-badia-kharroubi.c9users.io:8081/analyse/api/v1/entreprise/personnes-physiques/E0102030405060708/cotation-simplifiee"
+      "urlDefault": "http://localhost:18080/analyse/api/v1/entreprise/personnes-physiques/E0102030405060708/cotation-simplifiee",
+      "urlToChange": "http://localhost:18080/analyse/api/v1/entreprise/personnes-physiques/E0102030405060708/cotation-simplifiee"
     }
   ]
 }

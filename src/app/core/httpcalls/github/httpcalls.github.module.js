@@ -2,6 +2,6 @@
   'use strict';
 
   angular
-    .module('httpcalls.github', []);
+    .module('app.httpcalls.github', []);
 
 })();

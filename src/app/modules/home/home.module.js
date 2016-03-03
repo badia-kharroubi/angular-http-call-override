@@ -2,6 +2,6 @@
   'use strict';
 
   angular
-    .module('home', ['jsonFormatter']);
+    .module('app.home', ['jsonFormatter']);
 
 })();

@@ -3,13 +3,15 @@
 
   angular
     .module('app', [
-      // bower
+      // bower_components
       'restangular', 'ui.router', 'ngMaterial', 'angular-logger',
-      // core
-      'httpcalls',
-      // components
+      // src/app/blocks
+
+      // src/app/components
       'malarkey', 'navbar',
-      // modules
-      'home']);
+      // src/app/core
+      'app.httpcalls',
+      // src/app/modules
+      'app.home']);
 
 })();

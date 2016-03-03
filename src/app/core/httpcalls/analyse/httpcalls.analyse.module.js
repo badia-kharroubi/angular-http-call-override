@@ -2,6 +2,6 @@
   'use strict';
 
   angular
-    .module('httpcalls.analyse', []);
+    .module('app.httpcalls.analyse', []);
 
 })();
