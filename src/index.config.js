@@ -24,33 +24,17 @@ var indexConfig = {
         {
           "rank": 1,
           "override": true,
-          "pathParams": true,
           "origin": {
             "protocol": "http",
             "host": "localhost",
             "port": "18080",
-            "endpoint": "gerico/api/v1/entreprise/entites-juridiques/{idej}/contacts",
-            "pathParams": [
-              {
-                "id": 1,
-                "key": "{idej}",
-                "slashNumberBefore": 8
-              }
-            ]
+            "endpoint": "gerico/api/v1/entreprise/entites-juridiques/{idej}/contacts"
           },
           "target": {
             "protocol": "http",
             "host": "localhost",
             "port": "28080",
-            "endpoint": "ficonef/api/v1/entreprise/entites-juridiques/{idej}/contacts",
-            "pathParams": [
-              {
-                "id": 1,
-                "idOrigin": 1,
-                "key": "{idej}",
-                "slashNumberBefore": 8
-              }
-            ]
+            "endpoint": "ficonef/api/v1/entreprise/entites-juridiques/{idej}/contacts"
           }
         },
         {
@@ -61,39 +45,13 @@ var indexConfig = {
             "protocol": "http",
             "host": "localhost",
             "port": "18080",
-            "endpoint": "gerico/api/v1/entreprise/entites-juridiques/{idej}/contacts/{idcontact}",
-            "pathParams": [
-              {
-                "id": 1,
-                "key": "{idej}",
-                "slashNumberBefore": 8
-              },
-              {
-                "id": 2,
-                "key": "{idcontact}",
-                "slashNumberBefore": 10
-              }
-            ]
+            "endpoint": "gerico/api/v1/entreprise/entites-juridiques/{idej}/contacts/{idcontact}"
           },
           "target": {
             "protocol": "http",
             "host": "localhost",
             "port": "28080",
-            "endpoint": "ficonef/api/v1/entreprise/entites-juridiques/{idej}/contacts/{idcontact}",
-            "pathParams": [
-              {
-                "id": 1,
-                "idOrigin": 1,
-                "key": "{idej}",
-                "slashNumberBefore": 8
-              },
-              {
-                "id": 2,
-                "idOrigin": 2,
-                "key": "{idcontact}",
-                "slashNumberBefore": 10
-              }
-            ]
+            "endpoint": "ficonef/api/v1/entreprise/entites-juridiques/{idej}/contacts/{idcontact}"
           }
         },
         {
@@ -104,28 +62,13 @@ var indexConfig = {
             "protocol": "http",
             "host": "localhost",
             "port": "18080",
-            "endpoint": "analyse/api/v1/entreprise/entites-juridiques/{idej}/cotation-simplifiee",
-            "pathParams": [
-              {
-                "id": 1,
-                "key": "{idej}",
-                "slashNumberBefore": 8
-              }
-            ]
+            "endpoint": "analyse/api/v1/entreprise/entites-juridiques/{idej}/cotation-simplifiee"
           },
           "target": {
             "protocol": "http",
             "host": "localhost",
             "port": "28080",
-            "endpoint": "ficonef/api/v1/entreprise/entites-juridiques/{idej}/cotation-simplifiee",
-            "pathParams": [
-              {
-                "id": 1,
-                "idOrigin": 1,
-                "key": "{idej}",
-                "slashNumberBefore": 8
-              }
-            ]
+            "endpoint": "ficonef-ws-common/api/v2/common/entreprise/entites-juridiques/{idej}/cotation-simplifiee"
           }
         },
         {
@@ -136,13 +79,13 @@ var indexConfig = {
             "protocol": "http",
             "host": "localhost",
             "port": "18080",
-            "endpoint": "analyse/api/v1/entreprise/synthese",
+            "endpoint": "analyse/api/v1/entreprise/synthese"
           },
           "target": {
             "protocol": "http",
             "host": "localhost",
-            "port": "18080",
-            "endpoint": "ficonef-ws-common/api/v1/commons/entreprise/synthese"
+            "port": "28080",
+            "endpoint": "ficonef-ws-common/api/v1/common/entreprise/synthese"
           }
         }
       ]

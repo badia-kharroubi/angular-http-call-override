@@ -70,7 +70,7 @@
           var regexCallString = '^(' + httpCallConfig.origin.protocol + ':\\/\\/' + httpCallConfig.origin.host + ':' +
             httpCallConfig.origin.port + '\\/)';
           var tokens = httpCallConfig.origin.endpoint.split('/');
-          var tokensLenght = tokens.length-1;
+          var tokensLenght = tokens.length - 1;
           for (var j = 0; j < tokensLenght; j++) {
             var token = tokens[j];
             if (token.startsWith('{')) {
@@ -103,8 +103,45 @@
     }
 
     function getNewRequestUrl(httpcallsOverride) {
-      //TODO : complete the override
-      httpcallsOverride.requestConfig.responseTech.requestUrlOverrided = httpcallsOverride.requestConfig.responseTech.requestUrl;
+      var targetEndpoint = httpcallsOverride.httpcallsConfig.target.endpoint;
+      var targetPathParamsRegex = /{[a-z&]*}/ig;
+      var resultRegex;
+      var targetPathParam = [];
+
+      while ((resultRegex = targetPathParamsRegex.exec(targetEndpoint)) !== null) {
+        targetPathParam.push({param: resultRegex[0], value: ""});
+      }
+      httpcallsOverride.requestConfig.responseTech.requestUrlOverrided =
+        httpcallsOverride.httpcallsConfig.target.protocol + '://' +
+        httpcallsOverride.httpcallsConfig.target.host + ':' +
+        httpcallsOverride.httpcallsConfig.target.port + '/';
+      var targetPathParamLength = targetPathParam.length;
+      //if path params search values
+      if (targetPathParamLength > 0) {
+        var urlPatern = httpcallsOverride.httpcallsConfig.origin.protocol + '://' +
+          httpcallsOverride.httpcallsConfig.origin.host + ':' +
+          httpcallsOverride.httpcallsConfig.origin.port + '/' +
+          httpcallsOverride.httpcallsConfig.origin.endpoint;
+        var requestUrl = httpcallsOverride.requestConfig.responseTech.requestUrl;
+        var urlPaternTokens = urlPatern.split('/');
+        var requestUrlTokens = requestUrl.split('/');
+        var tokensLenght = urlPaternTokens.length;
+        for (var i = 0; i < targetPathParamLength; i++) {
+          for (var j = 0; j < tokensLenght; j++) {
+            if (urlPaternTokens[j].startsWith('{')) {
+              if (urlPaternTokens[j] === targetPathParam[i].param) {
+                targetPathParam[i].value = requestUrlTokens[j];
+                break;
+              }
+            }
+          }
+          targetEndpoint = targetEndpoint.replace(targetPathParam[i].param, targetPathParam[i].value);
+        }
+        httpcallsOverride.requestConfig.responseTech.requestUrlOverrided += targetEndpoint;
+      } else {
+        httpcallsOverride.requestConfig.responseTech.requestUrlOverrided +=
+          httpcallsOverride.httpcallsConfig.target.endpoint;
+      }
       return httpcallsOverride;
     }
   }
