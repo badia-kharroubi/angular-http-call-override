@@ -16,25 +16,20 @@
 
     return service;
 
-
     function interceptRequest(config) {
-      config.responseTech = {};
-      config.responseTech.requestTimestamp = new Date().getTime();
-      config.responseTech.requestUrl = config.url;
-      config.responseTech.requestParams = config.params;
-      config.responseTech.requestMethod = config.method.toLocaleLowerCase();
-      config.responseTech.requestHeaders = config.headers;
+      config.responseTech = {
+        requestTimestamp: new Date().getTime(),
+        requestUrl: config.url,
+        requestParams: config.params,
+        requestMethod: config.method.toLocaleLowerCase(),
+        requestHeaders: config.headers
+      };
       // if asset then nothing to do else add revision query param
       // to force no browser cache
       if (httpcallsUtilService.isAsset(config.responseTech.requestUrl)) {
         return config;
-      } else {
-        if (config.params) {
-          config.params['rev'] = config.responseTech.requestTimestamp.toString();
-        } else {
-          config.params = {'rev': config.responseTech.requestTimestamp.toString()};
-        }
       }
+      config.params = httpcallsUtilService.addRevisionToQueryParams(config.params);
       config.responseTech.httpcallsOverrideBeginTimestamp = new Date().getTime();
       var httpcallsOverride = httpcallsUtilService.isToOverride(config, APP_CONFIG);
       if (httpcallsOverride.override) {
@@ -55,6 +50,7 @@
 
     function interceptResponse(response) {
       response.responseTech = response.config.responseTech;
+      response.config.responseTech = null;
       response.responseTech.responseTimestamp = new Date().getTime();
       response.responseTech.responseHttpStatus = response.status;
       response.responseTech.responseHttpStatusText = response.statusText;
