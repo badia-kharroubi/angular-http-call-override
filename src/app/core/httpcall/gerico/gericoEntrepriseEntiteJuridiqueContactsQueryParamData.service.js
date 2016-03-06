@@ -2,16 +2,16 @@
   'use strict';
 
   angular
-    .module('app.httpcalls.gerico')
+    .module('app.httpCall.gerico')
     .factory('gericoEntrepriseEntiteJuridiqueContactsQueryParamDataService',
       gericoEntrepriseEntiteJuridiqueContactsQueryParamDataService);
 
   /** @ngInject */
   function gericoEntrepriseEntiteJuridiqueContactsQueryParamDataService(gericoRestangularService,
                                                                         $log, APP_CONFIG) {
-    var logger = $log.getInstance('app.httpcalls.gerico');
+    var logger = $log.getInstance('app.httpCall.gerico');
 
-    var apiHost = APP_CONFIG.httpcalls.gericoApiBase;
+    var apiHost = APP_CONFIG.httpCall.gericoApiBase;
 
     var dataService = {
       apiHost: apiHost,

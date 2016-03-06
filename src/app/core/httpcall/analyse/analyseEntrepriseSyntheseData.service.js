@@ -2,14 +2,14 @@
   'use strict';
 
   angular
-    .module('app.httpcalls.analyse')
+    .module('app.httpCall.analyse')
     .factory('analyseEntrepriseSyntheseDataService', analyseEntrepriseSyntheseDataService);
 
   /** @ngInject */
   function analyseEntrepriseSyntheseDataService(analyseRestangularService, $log, APP_CONFIG) {
-    var logger = $log.getInstance('app.httpcalls.analyse');
+    var logger = $log.getInstance('app.httpCall.analyse');
 
-    var apiHost = APP_CONFIG.httpcalls.analyseApiBase;
+    var apiHost = APP_CONFIG.httpCall.analyseApiBase;
 
     var dataService = {
       apiHost: apiHost,

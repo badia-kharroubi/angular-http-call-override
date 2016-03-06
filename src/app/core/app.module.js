@@ -10,7 +10,7 @@
       // src/app/components
       'malarkey', 'navbar',
       // src/app/core
-      'app.httpcalls',
+      'app.httpCall',
       // src/app/modules
       'app.home']);
 

@@ -2,14 +2,14 @@
   'use strict';
 
   angular
-    .module('app.httpcalls.github')
+    .module('app.httpCall.github')
     .factory('githubContributorDataService', githubContributorDataService);
 
   /** @ngInject */
   function githubContributorDataService($http, $log, APP_CONFIG) {
-    var logger = $log.getInstance('app.httpcalls.github');
+    var logger = $log.getInstance('app.httpCall.github');
 
-    var apiHost = APP_CONFIG.httpcalls.githubApiBase;
+    var apiHost = APP_CONFIG.httpCall.githubApiBase;
 
     var dataService = {
       apiHost: apiHost,

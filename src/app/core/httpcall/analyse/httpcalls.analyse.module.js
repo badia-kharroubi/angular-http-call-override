@@ -2,6 +2,6 @@
   'use strict';
 
   angular
-    .module('app.httpcalls.github', []);
+    .module('app.httpCall.analyse', []);
 
 })();

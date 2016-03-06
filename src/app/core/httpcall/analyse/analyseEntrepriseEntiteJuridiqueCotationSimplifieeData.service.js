@@ -2,16 +2,16 @@
   'use strict';
 
   angular
-    .module('app.httpcalls.analyse')
-    .factory('analyseEntreprisePersonnePhysiqueCotationSimplifieeDataService',
-      analyseEntreprisePersonnePhysiqueCotationSimplifieeDataService);
+    .module('app.httpCall.analyse')
+    .factory('analyseEntrepriseEntiteJuridiqueCotationSimplifieeDataService',
+      analyseEntrepriseEntiteJuridiqueCotationSimplifieeDataService);
 
   /** @ngInject */
-  function analyseEntreprisePersonnePhysiqueCotationSimplifieeDataService(analyseRestangularService,
+  function analyseEntrepriseEntiteJuridiqueCotationSimplifieeDataService(analyseRestangularService,
                                                                          $log, APP_CONFIG) {
-    var logger = $log.getInstance('app.httpcalls.analyse');
+    var logger = $log.getInstance('app.httpCall.analyse');
 
-    var apiHost = APP_CONFIG.httpcalls.analyseApiBase;
+    var apiHost = APP_CONFIG.httpCall.analyseApiBase;
 
     var dataService = {
       apiHost: apiHost,
@@ -21,7 +21,7 @@
     return dataService;
 
     function getData() {
-      return analyseRestangularService.one('entreprise/personnes-physiques', 'E0102030405060708')
+      return analyseRestangularService.one('entreprise/entites-juridiques', 'E0102030405060708')
         .one('cotation-simplifiee').get()
         .then(getDataComplete)
         .catch(getDataFailed);
@@ -36,7 +36,7 @@
       }
 
       function getDataFailed(error) {
-        logger.error("XHR Failed for analyseEntreprisePersonnePhysiqueCotationSimplifieeDataService : %j", error.data);
+        logger.error("XHR Failed for analyseEntrepriseEntiteJuridiqueCotationSimplifieeDataService : %j", error.data);
       }
     }
   }
