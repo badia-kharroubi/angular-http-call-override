@@ -1,0 +1,10 @@
+{
+  "data": {
+    "totalEntitesJuridique": 30,
+    "totalPersonnesPhysique": 20
+  },
+  "dataTech": {
+    "urlPattern": "http://localhost:18080/analyse/api/v1/entreprise/synthese",
+    "note": "Endpoint without pathParams and without queryParams"
+  }
+}

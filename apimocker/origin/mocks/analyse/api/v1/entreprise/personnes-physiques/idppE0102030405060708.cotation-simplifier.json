@@ -1,0 +1,11 @@
+{
+  "data": {
+    "type": "cotation-simplifiee-pp",
+    "valeur": "PP-A+++",
+    "idpp": "E0102030405060708"
+  },
+  "dataTech": {
+    "urlPattern": "http://localhost:18080/analyse/api/v1/entreprise/personnes-physiques/{idpp}/cotation-simplifiee",
+    "note": "Endpoint with pathParams"
+  }
+}

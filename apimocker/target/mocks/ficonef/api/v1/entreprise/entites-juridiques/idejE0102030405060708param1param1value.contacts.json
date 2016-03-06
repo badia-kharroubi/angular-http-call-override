@@ -1,0 +1,23 @@
+{
+  "data": [
+    {
+      "nom": "DUPONT",
+      "premon": "Emmanuel",
+      "telephone": "0678332211",
+      "idej": "E0102030405060708",
+      "idcontact": "23"
+    },
+    {
+      "nom": "BOURGON",
+      "premon": "Rachelle",
+      "telephone": "0644332211",
+      "idej": "E0102030405060709",
+      "idcontact": "24"
+    }
+  ],
+  "dataTech": {
+    "urlPattern": "http://localhost:18080/ficonef/api/v1/entreprise/entites-juridiques/{idej}/contacts",
+    "queryParams": "param1=param1value",
+    "note": "Endpoint with one pathParams and one queryParams"
+  }
+}

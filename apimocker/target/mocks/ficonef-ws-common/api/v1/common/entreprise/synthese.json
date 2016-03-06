@@ -1,0 +1,11 @@
+{
+  "data": {
+    "totalEntitesJuridique": 30,
+    "totalPersonnesPhysique": 20
+  },
+  "dataTech": {
+    "urlPattern": "http://localhost:28080/ficonef-ws-common/api/v1/common/entreprise/synthese",
+    "note": "Endpoint without pathParams and without queryParams"
+  }
+}
+

@@ -6,10 +6,12 @@
     </header>
 
     <section class="md-display-2">
-      <h1>Overload RestAngular URL Calls Demo</h1>
+      <h1>Demo: Overload AngularJS http calls URL</h1>
       <p>
         With ♥ thanks to the contributions of
-        <acme-malarkey extra-values="['Angular', 'Gulp', 'Npm', 'Bower', 'Jasmine', 'Protractor']"></acme-malarkey>
+        <acme-malarkey
+          extra-values="['Angular','angular-material', 'angular-logger', 'Lodash',
+          'Gulp', 'Npm', 'Bower', 'Jasmine', 'Protractor']"></acme-malarkey>
       </p>
     </section>
     <div ng-repeat="demo in home.viewdata.demos | orderBy:'rank'">
@@ -19,7 +21,9 @@
         <div class="md-toolbar-tools">
           <span class="md-display-1">{{ demo.title }}</span>
           <span flex></span>
-          <md-button class="md-primary md-hue-1" aria-label="Call Rest" ng-click="home.tech.fns.getHttpCalls($index, demo.dataType)">Call Oracall</md-button>
+          <md-button class="md-primary md-hue-1" aria-label="Call Rest"
+                     ng-click="home.tech.fns.getHttpCalls($index, demo.dataType)">Call Oracall
+          </md-button>
         </div>
       </md-toolbar>
       <md-content class="md-whiteframe-9dp" layout-padding>

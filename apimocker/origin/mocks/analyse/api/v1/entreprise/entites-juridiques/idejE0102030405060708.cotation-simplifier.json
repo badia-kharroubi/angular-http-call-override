@@ -1,0 +1,11 @@
+{
+  "data": {
+    "type": "cotation-simplifiee-ej",
+    "valeur": "EJ-A+++",
+    "idej": "E0102030405060708"
+  },
+  "dataTech": {
+    "urlPattern": "http://localhost:18080/analyse/api/v1/entreprise/entites-juridiques/{idej}/cotation-simplifiee",
+    "note": "Endpoint with pathParams"
+  }
+}

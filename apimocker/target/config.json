@@ -1,0 +1,31 @@
+{
+  "note": "This is teh target web services",
+  "mockDirectory": "./mocks",
+  "staticDirectory": "./statics",
+  "quiet": false,
+  "port": "28080",
+  "latency": 10,
+  "logRequestHeaders": false,
+  "allowedDomains": ["*"],
+  "webServices": {
+    "ficonef/api/v1/entreprise/entites-juridiques/:idej/contacts": {
+      "mockFile": "ficonef/api/v1/entreprise/entites-juridiques/contacts.json",
+      "verbs": ["get"],
+      "switch": ["idej","param1"]
+    },
+    "ficonef/api/v1/entreprise/entites-juridiques/:idej/contacts/:idcontact": {
+      "mockFile": "ficonef/api/v1/entreprise/entites-juridiques/contact.json",
+      "verbs": ["get"],
+      "switch": ["idej","idcontact"]
+    },
+    "ficonef-ws-common/api/v2/common/entreprise/entites-juridiques/:idej/cotation-simplifiee": {
+      "mockFile": "ficonef-ws-common/api/v2/common/entreprise/entites-juridiques/cotation-simplifier.json",
+      "verbs": ["get"],
+      "switch": "idej"
+    },
+    "ficonef-ws-common/api/v1/common/entreprise/synthese": {
+      "mockFile": "ficonef-ws-common/api/v1/common/entreprise/synthese.json",
+      "verbs": ["get"]
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "data": {
+    "nom": "DUPONT",
+    "premon": "Emmanuel",
+    "telephone": "0678332211",
+    "idej": "E0102030405060708",
+    "idcontact": "23"
+  },
+  "dataTech": {
+    "urlPattern": "http://localhost:18080/ficonef/api/v1/entreprise/entites-juridiques/{idej}/contacts/{idcontact}",
+    "note": "Endpoint with two pathParams"
+  }
+}

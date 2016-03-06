@@ -27,12 +27,11 @@
         .catch(getDataFailed);
 
       function getDataComplete(response) {
-        var toReturn = {};
-        toReturn.techdata = response.data.techdata;
-        toReturn.data = response.data.data;
-        toReturn.responseTech = response.responseTech
-
-        return toReturn;
+        return {
+          data: response.data.data,
+          dataTech: response.data.dataTech,
+          responseTech: response.responseTech
+        };
       }
 
       function getDataFailed(error) {

@@ -1,0 +1,13 @@
+{
+  "data": {
+    "nom": "AAAAAAAAAAAAAAAAAAAA",
+    "premon": "AAAAAAAAAAAAAAAAAAAA",
+    "telephone": "9999999999",
+    "idej": "A9999999999999999",
+    "idcontact": "9999999999"
+  },
+  "dataTech": {
+    "urlPattern": "http://localhost:18080/gerico/api/v1/entreprise/entites-juridiques/{idej}/contacts/{idcontact}",
+    "note": "Endpoint with two pathParams"
+  }
+}

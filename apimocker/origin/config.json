@@ -1,0 +1,36 @@
+{
+  "note": "This is the origin web services",
+  "mockDirectory": "./mocks",
+  "staticDirectory": "./statics",
+  "quiet": false,
+  "port": "18080",
+  "latency": 10,
+  "logRequestHeaders": false,
+  "allowedDomains": ["*"],
+  "webServices": {
+    "gerico/api/v1/entreprise/entites-juridiques/:idej/contacts": {
+      "mockFile": "gerico/api/v1/entreprise/entites-juridiques/contacts.json",
+      "verbs": ["get"],
+      "switch": ["idej","param1"]
+    },
+    "gerico/api/v1/entreprise/entites-juridiques/:idej/contacts/:idcontact": {
+      "mockFile": "gerico/api/v1/entreprise/entites-juridiques/contact.json",
+      "verbs": ["get"],
+      "switch": ["idej","idcontact"]
+    },
+    "analyse/api/v1/entreprise/entites-juridiques/:idej/cotation-simplifiee": {
+      "mockFile": "analyse/api/v1/entreprise/entites-juridiques/cotation-simplifier.json",
+      "verbs": ["get"],
+      "switch": "idej"
+    },
+    "analyse/api/v1/entreprise/personnes-physiques/:idpp/cotation-simplifiee": {
+      "mockFile": "analyse/api/v1/entreprise/personnes-physiques/cotation-simplifier.json",
+      "verbs": ["get"],
+      "switch": "idpp"
+    },
+     "analyse/api/v1/entreprise/synthese": {
+      "mockFile": "analyse/api/v1/entreprise/synthese.json",
+      "verbs": ["get"]
+    }
+  }
+}

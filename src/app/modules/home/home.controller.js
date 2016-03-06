@@ -49,7 +49,7 @@
           logger.error("Calling %s time(s) getHttpCalls[%s] : %j",
             vm.viewdata.demos[demoIndex].callCount, dataType, error.data, error.data);
         });
-    }
+    };
 
     //Start
     start();

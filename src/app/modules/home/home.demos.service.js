@@ -60,7 +60,7 @@
         return deferred.promise;
 
       }
-    }
+    };
   }
 
 })();

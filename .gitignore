@@ -3,6 +3,8 @@ bower_components/
 coverage/
 .sass-cache/
 .idea/
+.DS_Store
+git
 .tmp/
 /oracall.iml
 dist/

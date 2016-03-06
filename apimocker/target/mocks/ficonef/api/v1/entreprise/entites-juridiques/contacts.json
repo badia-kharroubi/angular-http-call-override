@@ -1,0 +1,24 @@
+{
+  "data": [
+    {
+      "nom": "AAAAAAAAAAAAAAAAAAAA",
+      "premon": "AAAAAAAAAAAAAAAAAAAA",
+      "telephone": "9999999991",
+      "idej": "A9999999999999991",
+      "idcontact": "9999999991"
+    },
+    {
+      "nom": "AAAAAAAAAAAAAAAAAAAB",
+      "premon": "AAAAAAAAAAAAAAAAAAAB",
+      "telephone": "9999999992",
+      "idej": "A9999999999999992",
+      "idcontact": "9999999992"
+    }
+  ],
+  "dataTech": {
+    "urlPattern": "http://localhost:18080/ficonef/api/v1/entreprise/entites-juridiques/{idej}/contacts",
+    "queryParams": "param1=param1value",
+    "note": "Endpoint with one pathParams and one queryParams"
+  }
+}
+

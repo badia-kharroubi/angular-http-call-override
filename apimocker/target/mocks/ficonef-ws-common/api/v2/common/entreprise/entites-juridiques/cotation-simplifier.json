@@ -1,0 +1,12 @@
+{
+  "data": {
+    "type": "cotation-simplifiee-ej",
+    "valeur": "EJ-Aooo",
+    "idej": "A9999999999999999",
+    "date": "YYYY-MM-DD"
+  },
+  "dataTech": {
+    "urlPattern": "http://localhost:28080/ficonef-ws-common/api/v2/common/entreprise/entites-juridiques/{idej}/cotation-simplifiee",
+    "note": "Endpoint with pathParams"
+  }
+}
