@@ -33,6 +33,7 @@
       }
 
       function getDataFailed(error) {
+        //return exception.catcher('XHR Failed for gericoEntrepriseEntiteJuridiqueContactsDataService')(error);
         logger.error("XHR Failed for gericoEntrepriseEntiteJuridiqueContactsDataService : %j", error.data);
       }
     }

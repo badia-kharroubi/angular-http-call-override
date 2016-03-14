@@ -6,7 +6,7 @@
       // bower_components
       'restangular', 'ui.router', 'ngMaterial', 'angular-logger',
       // src/app/blocks
-
+      'blocks.exception',
       // src/app/components
       'malarkey', 'navbar',
       // src/app/core
